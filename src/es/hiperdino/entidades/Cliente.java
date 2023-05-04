@@ -19,7 +19,7 @@ public class Cliente {
 
     public void agregarProducto (){
         cestaCompra.push(generadorRandom.productosAleatorios());
-        // TODO: ¿Cómo añado más de un producto a la cesta?
+
     }
 
      public String verCesta(){

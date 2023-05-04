@@ -4,15 +4,24 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Cajero {
-    private int numeroCaja = 1;
+    private final int NUMEROCAJA = 1;
     private boolean abrirCaja = false;
 
     Queue <String> nombreClientesFilaDeCaja = new LinkedList<>();
+
+    public int getNUMEROCAJA() {
+        return NUMEROCAJA;
+    }
+
     public boolean getAbrirCaja() {
         return abrirCaja;
     }
+
+    public boolean listaVacia(){
+        return nombreClientesFilaDeCaja.isEmpty();
+    }
     public void abrirCaja(){
-        if(abrirCaja == true){
+        if(abrirCaja){
             System.out.println("Shiquilla ya está abierta");
         }else {
             abrirCaja = true;
@@ -34,11 +43,15 @@ public class Cajero {
         return "Los clientes en fila " + nombreClientesFilaDeCaja.toString().replace(",","\n  ").replace("]","").replace("[","");
     }
 
+    public void clienteAtendido(){
+        System.out.println("Cliente atendido: "+ nombreClientesFilaDeCaja.poll());
+    }
+
     @Override
     public String toString() {
         String msg;
         msg = "----------------------------—=== FILA CLIENTES ===—-------------------------\n" +
-                "* Numero de caja: " + numeroCaja + " \n" +
+                "* Numero de caja: " + NUMEROCAJA + " \n" +
                 "* Total de cliente: " + nombreClientesFilaDeCaja.size() + " \n" +
                 "* " + verClienteFila() + " \n" +
                 "=========================================================================";
