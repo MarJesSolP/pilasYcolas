@@ -19,10 +19,9 @@ public class Cliente {
 
     public void agregarProducto (){
         cestaCompra.push(generadorRandom.productosAleatorios());
+        // TODO: ¿Cómo añado más de un producto a la cesta?
     }
-    public void quitarProducto(String producto){
-        cestaCompra.remove(producto);
-    }
+
      public void verCesta(){
          System.out.println("Cesta de la compra de " + nombre + ":" + cestaCompra);
 
