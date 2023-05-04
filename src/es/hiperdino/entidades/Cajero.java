@@ -7,44 +7,45 @@ public class Cajero {
     private final int NUMEROCAJA = 1;
     private boolean abrirCaja = false;
 
-    Queue <String> nombreClientesFilaDeCaja = new LinkedList<>();
+    Queue<String> nombreClientesFilaDeCaja = new LinkedList<>();
 
-    public int getNUMEROCAJA() {
-        return NUMEROCAJA;
-    }
 
     public boolean getAbrirCaja() {
         return abrirCaja;
     }
 
-    public boolean listaVacia(){
+    public boolean listaVacia() {
         return nombreClientesFilaDeCaja.isEmpty();
     }
-    public void abrirCaja(){
-        if(abrirCaja){
-            System.out.println("Shiquilla ya está abierta");
-        }else {
+
+    public void abrirCaja() {
+        if (abrirCaja) {
+            System.out.println("Shiquillo ya está abierta");
+        } else {
             abrirCaja = true;
             System.out.println("Caja abierta");
         }
     }
-    public void cerrarCaja(){
-        if(!abrirCaja){
+
+    public void cerrarCaja() {
+        if (!abrirCaja) {
             System.out.println("La caja ya está cerrada MOSTRO");
-        }else {
+        } else {
             System.out.println("Cerrando la cajita...");
             abrirCaja = false;
         }
     }
-    public void agregarNombresClientes(String nombre){
+
+    public void agregarNombresClientes(String nombre) {
         nombreClientesFilaDeCaja.add(nombre);
     }
-    public String verClienteFila(){
-        return "Los clientes en fila " + nombreClientesFilaDeCaja.toString().replace(",","\n  ").replace("]","").replace("[","");
+
+    public String verClienteFila() {
+        return "Clientes en fila:  \n"      +      nombreClientesFilaDeCaja.toString().replace(",", "\n  ").replace("]", "").replace("[", "");
     }
 
-    public void clienteAtendido(){
-        System.out.println("Cliente atendido: "+ nombreClientesFilaDeCaja.poll());
+    public void clienteAtendido() {
+        System.out.println("Cliente atendido: " + nombreClientesFilaDeCaja.poll());
     }
 
     @Override
@@ -57,10 +58,6 @@ public class Cajero {
                 "=========================================================================";
         return msg;
     }
-
-
-
-
 
 
 }

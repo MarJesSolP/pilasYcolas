@@ -17,21 +17,22 @@ public class Cliente {
         return nombre;
     }
 
-    public void agregarProducto (){
+    public void agregarProducto() {
         cestaCompra.push(generadorRandom.productosAleatorios());
 
     }
 
-     public String verCesta(){
-         return "Cesta de la compra de " + nombre + ":\n   " + cestaCompra.toString().replace(",","\n  ").replace("]","").replace("[","");
+    public String verCesta() {
+        return "Cesta de la compra de " + nombre + ":\n   " + cestaCompra.toString().replace(",", "\n  ").replace("]", "").replace("[", "");
 
-     }
+    }
+
     @Override
     public String toString() {
         String msg;
         msg = "----------------------------—=== CLIENTES ===—-------------------------\n" +
                 "* Nombre: " + nombre + " \n" +
-                "* Total de productos: " + cestaCompra.size() + "\n"+
+                "* Total de productos: " + cestaCompra.size() + "\n" +
                 "* " + verCesta() + "\n" +
                 "=========================================================================";
         return msg;

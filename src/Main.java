@@ -54,6 +54,7 @@ public class Main {
 
                 case 5:
                     Paquito.cerrarCaja();
+                    System.out.println("****Supermercado cerrado****");
 
 
             }
