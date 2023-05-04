@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Cajero {
-    private int numeroCaja, identificadorDeCaja;
+    private int numeroCaja = 1;
     private boolean abrirCaja = false;
 
     Queue <String> nombreClientesFilaDeCaja = new LinkedList<>();
@@ -30,9 +30,23 @@ public class Cajero {
     public void agregarNombresClientes(String nombre){
         nombreClientesFilaDeCaja.add(nombre);
     }
-    public void verClienteFila(){
-        System.out.println("Los clientes en fila " + nombreClientesFilaDeCaja);
+    public String verClienteFila(){
+        return "Los clientes en fila " + nombreClientesFilaDeCaja.toString().replace(",","\n  ").replace("]","").replace("[","");
     }
+
+    @Override
+    public String toString() {
+        String msg;
+        msg = "----------------------------—=== FILA CLIENTES ===—-------------------------\n" +
+                "* Numero de caja: " + numeroCaja + " \n" +
+                "* Total de cliente: " + nombreClientesFilaDeCaja.size() + " \n" +
+                "* " + verClienteFila() + " \n" +
+                "=========================================================================";
+        return msg;
+    }
+
+
+
 
 
 

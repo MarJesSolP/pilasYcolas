@@ -10,7 +10,10 @@ public class Main {
         System.out.println(productosAleatorios());
         Cliente cliente1 = new Cliente();
         cliente1.agregarProducto();
+        cliente1.agregarProducto();
+        cliente1.agregarProducto();
         cliente1.verCesta();
+        System.out.println(cliente1);
 
 
     }

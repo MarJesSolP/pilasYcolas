@@ -22,9 +22,20 @@ public class Cliente {
         // TODO: ¿Cómo añado más de un producto a la cesta?
     }
 
-     public void verCesta(){
-         System.out.println("Cesta de la compra de " + nombre + ":" + cestaCompra);
+     public String verCesta(){
+         return "Cesta de la compra de " + nombre + ":\n   " + cestaCompra.toString().replace(",","\n  ").replace("]","").replace("[","");
 
      }
+    @Override
+    public String toString() {
+        String msg;
+        msg = "----------------------------—=== CLIENTES ===—-------------------------\n" +
+                "* Nombre: " + nombre + " \n" +
+                "* Total de productos: " + cestaCompra.size() + "\n"+
+                "* " + verCesta() + "\n" +
+                "=========================================================================";
+        return msg;
+    }
+
 
 }
