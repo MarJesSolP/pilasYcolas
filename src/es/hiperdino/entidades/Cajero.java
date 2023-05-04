@@ -41,7 +41,7 @@ public class Cajero {
     }
 
     public String verClienteFila() {
-        return "Clientes en fila:  \n"      +      nombreClientesFilaDeCaja.toString().replace(",", "\n  ").replace("]", "").replace("[", "");
+        return "Clientes en fila:  " + "\n"+      nombreClientesFilaDeCaja.toString().replace(",", "\n  ").replace("]", "").replace("[", "");
     }
 
     public void clienteAtendido() {
